@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -53,16 +53,16 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/android.jpg?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/android.jpg?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/android.jpg?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/android.jpg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
 
 
 
@@ -81,13 +81,13 @@
 
 <meta name="description" content="细节决定成败，变通方为王道">
 <meta property="og:type" content="website">
-<meta property="og:title" content="jycon">
+<meta property="og:title" content="jycon-个人博客">
 <meta property="og:url" content="https://jycon.top/index.html">
-<meta property="og:site_name" content="jycon">
+<meta property="og:site_name" content="jycon-个人博客">
 <meta property="og:description" content="细节决定成败，变通方为王道">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jycon">
+<meta name="twitter:title" content="jycon-个人博客">
 <meta name="twitter:description" content="细节决定成败，变通方为王道">
 
 
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -124,7 +124,7 @@
 
 
 
-  <title>jycon</title>
+  <title>jycon-个人博客</title>
   
 
 
@@ -156,12 +156,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">jycon</span>
+        <span class="site-title">jycon-个人博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">jy's  blog</p>
       
   </div>
 
@@ -268,11 +268,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jycon">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/android.jpg">
+      <meta itemprop="image" content="/images/person.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jycon">
+      <meta itemprop="name" content="jycon-个人博客">
     </span>
 
     
@@ -356,18 +356,16 @@
       
         
           
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ButterKnife是一种用于控件初始化的注解框架，使用它可以为我们减少很多工作量，提高开发效率,下面来讲讲它的基本配置和使用</p>
-<h2 id="1-下载ButterKnifeZelezny插件"><a href="#1-下载ButterKnifeZelezny插件" class="headerlink" title="1.下载ButterKnifeZelezny插件"></a>1.下载ButterKnifeZelezny插件</h2><p>依次在AS的工具栏中点击File-&gt;Settings出现下图<br><img src="/img/config.png" alt="Toolbar"><br>由于我的已经下载过了，所以右上方出现的是Uninstall按钮，第一次下载时显示的是Install按钮，点击安装，然后重启一下AS就完成安装了</p>
-<h2 id="2-在gradle文件中进行配置"><a href="#2-在gradle文件中进行配置" class="headerlink" title="2.在gradle文件中进行配置"></a>2.在gradle文件中进行配置</h2><h3 id="2-1在build-gradle-Module-中的配置"><a href="#2-1在build-gradle-Module-中的配置" class="headerlink" title="2.1在build.gradle(Module)中的配置"></a>2.1在build.gradle(Module)中的配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">   </span><br><span class="line">    implementation &apos;com.jakewharton:butterknife:8.4.0&apos;</span><br><span class="line">    apt &apos;com.jakewharton:butterknife:8.4.0&apos;//AS2.0需要加上</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>正在使用AS2.0版本的小伙伴需要把implementation改成compile,并在文件的最上面加上apply  plugin’android-apt’，如果是3.0版本的除了需要上面的一条配置外，需要在最上面直接加上’annotationProcessor’</p>
-<h3 id="2-2-在build-gradle-Project-中的配置"><a href="#2-2-在build-gradle-Project-中的配置" class="headerlink" title="2.2 在build.gradle(Project)中的配置"></a>2.2 在build.gradle(Project)中的配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">      </span><br><span class="line">       classpath &apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</span><br><span class="line">     </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>到此，ButterKnife的基本配置就完成了</p>
-<h2 id="3-配置一次，高枕无忧"><a href="#3-配置一次，高枕无忧" class="headerlink" title="3.配置一次，高枕无忧"></a>3.配置一次，高枕无忧</h2><p>上面的方法只是针对某一个项目而言可以使用了，当再次新建一个项目时又需要重新配置，不过办法总比问题多，我们可以在AS的安装目录下先找到AndroidStudio\plugins\android\lib\templates\gradle-projects\NewAndroidModule\root\build.gradle.ftl文件，然后在dependency mavenUrl=”com.android.support:appcompat-v7:${buildApi}.+”/下方加上<br><code>&lt;dependency mavenUrl=&quot;com.jakewharton:butterknife:8.4.0&quot;/&gt;</code><br>因版本不同，可能有的人到这一步还是不行，需要加上以下三条<br> classpath ‘com.neenbedankt.gradle.plugins:android-apt:1.8’<br>  apply plugin: ‘android-apt’<br>  apt ‘com.jakewharton:butterknife-compiler:8.4.0’<br>至于位置跟gradle文件中是类似的，这点我没有测试，因为我的在上一步就出来了,<br>下面来看看效果：</p>
-<p>  <img src="/img/record.gif" alt="ButterKnife">   </p>
-<p>  注意使用时需要先在布局文件里给控件加上id</p>
-<h2 id="4-小结"><a href="#4-小结" class="headerlink" title="4.小结"></a>4.小结</h2><p>   在第一次看别人的一个项目源码时看到bindview这个注解，然后开始研究ButterKnife,当时配置的时候踩了不少坑，这次AS升级后这个框架又不能使用了，借着这次机会找到了一种配置一次就能一直使用的办法，在写这篇博客时其中有不少是参照一篇大牛的博客的，在这里表示感谢，让我少踩不少坑，不过也有些是我自己实践的经验，ButterKnife除了给按钮初始化也可以给控件加监听等一些其他的，大家感兴趣的可以继续去深究一下</p>
-
-          
+          简介ButterKnife是一种用于控件初始化的注解框架，使用它可以为我们减少很多工作量，提高开发效率,下面来讲讲它的基本配置和使用
+1.下载ButterKnifeZelezny插件依次在AS的工具栏中点击File-&gt;Settings出现下图由于我的已经下载过了，所以右上方出现的是Uninst
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/27/ButterKnife的使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -426,11 +424,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jycon">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/android.jpg">
+      <meta itemprop="image" content="/images/person.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jycon">
+      <meta itemprop="name" content="jycon-个人博客">
     </span>
 
     
@@ -514,24 +512,16 @@
       
         
           
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Toolbar是Google在Android5.0推出的一个替代ActionBar的控件，具有良好的可扩展性，下面为大家示范一个关于ToolBar使用的示例<br>先来看看效果图：<br><img src="/img/toolbar.png" alt="Toolbar">      </p>
-<h2 id="1-布局文件"><a href="#1-布局文件" class="headerlink" title="1.布局文件"></a>1.布局文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;    </span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    tools:context=&quot;com.example.administrator.myapplication.toolbardemo2.MainActivity&quot;&gt;</span><br><span class="line"></span><br><span class="line">   &lt;android.support.v7.widget.Toolbar</span><br><span class="line">       android:id=&quot;@+id/toolbar&quot;</span><br><span class="line">       android:layout_width=&quot;match_parent&quot;  </span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;  </span><br><span class="line">       app:title=&quot;首页&quot;  </span><br><span class="line">       app:subtitle=&quot;dd&quot;  </span><br><span class="line">       android:background=&quot;@color/colorPrimary&quot;  </span><br><span class="line">       app:theme=&quot;@style/AppTheme.NoActionBar&quot;</span><br><span class="line">       app:popupTheme=&quot;@style/Base.ThemeOverlay.AppCompat&quot;</span><br><span class="line">       /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h3><p>其中需要注意的是Toolbar的一些属性对app前缀和andriod前缀需要加以区分，例如title属性写成android前缀时会无效果</p>
-<h3 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h3><p>此外theme属性引用了样式文件，设置成了无ActionBar的模式，否则Toolbar会被自带的ActionBar覆盖，popupTheme属性是设置右上角小水滴点击时弹出菜单的样式,其中的样式文件如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style name=&quot;Base.ThemeOverlay.AppCompat&quot; parent=&quot;@style/ThemeOverlay.AppCompat.Dark&quot;&gt;</span><br><span class="line">          &lt;item name=&quot;@android:background&quot;&gt;@android:color/white&lt;/item&gt;</span><br><span class="line">          &lt;item name=&quot;@android:textColor&quot;&gt;@android:color/holo_red_light&lt;/item&gt;</span><br><span class="line">        &lt;item name=&quot;overlapAnchor&quot;&gt;false&lt;/item&gt;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>需要说明的是当overlapAnchor为true时,弹出菜单会显示在Toolbar之上，为false时显示在Toolbar下方</p>
-<h2 id="2-资源文件"><a href="#2-资源文件" class="headerlink" title="2.资源文件"></a>2.资源文件</h2><p>我们需要在res文件夹下建一个menu文件夹，再在里面建一个menu_item的资源文件，内容如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line"> xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    tools:context=&quot;.MainActivity&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       &lt;item</span><br><span class="line">      android:id=&quot;@+id/action_search&quot;</span><br><span class="line">         android:title=&quot;搜索&quot;</span><br><span class="line">        android:icon=&quot;@drawable/actionbar_search_icon&quot;</span><br><span class="line">        android:orderInCategory=&quot;0&quot;</span><br><span class="line">        android:actionViewClass=&quot;android.support.v7.widget.SearchView&quot;</span><br><span class="line">        app:showAsAction=&quot;ifRoom|collapseActionView&quot;</span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;item</span><br><span class="line">         android:id=&quot;@+id/action_add&quot;</span><br><span class="line">         android:title=&quot;添加&quot;</span><br><span class="line">         android:orderInCategory=&quot;1&quot;</span><br><span class="line">         app:showAsAction=&quot;never&quot;</span><br><span class="line">         /&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=&quot;@+id/action_share&quot;</span><br><span class="line">        android:title=&quot;分享&quot;</span><br><span class="line">        android:orderInCategory=&quot;2&quot;</span><br><span class="line">        app:showAsAction=&quot;never&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=&quot;@+id/action_save&quot;</span><br><span class="line">        android:title=&quot;收藏&quot;</span><br><span class="line">        android:orderInCategory=&quot;3&quot;</span><br><span class="line">        app:showAsAction=&quot;never&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/menu&gt;</span><br></pre></td></tr></table></figure>
-<p>orderInCategory设置的是排列的顺序，showAsAction是显示的方式，是显示在Toobar上还是显示在弹出菜单中</p>
-<h2 id="3-MainActivity"><a href="#3-MainActivity" class="headerlink" title="3.MainActivity"></a>3.MainActivity</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">      setSupportActionBar(toolbar);//设置Toolbar的显示</span><br><span class="line"></span><br><span class="line">toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean onMenuItemClick(MenuItem item) &#123;</span><br><span class="line">                switch (item.getItemId())&#123;</span><br><span class="line">                        case R.id.action_search:</span><br><span class="line">                            Toast.makeText(MainActivity.this, &quot;搜索&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">                            break;</span><br><span class="line">                        case R.id.action_share:</span><br><span class="line">                            Toast.makeText(MainActivity.this, &quot;分享&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">                            break;</span><br><span class="line">                        case R.id.action_add:</span><br><span class="line">                            Toast.makeText(MainActivity.this, &quot;添加&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">                            break;</span><br><span class="line">                        case R.id.action_save:</span><br><span class="line">                            Toast.makeText(MainActivity.this, &quot;收藏&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">                            break;</span><br><span class="line">                &#125;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置返回按钮</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//添加菜单资源文件</span><br><span class="line"> @Override</span><br><span class="line">    public boolean onCreateOptionsMenu(Menu menu) &#123;</span><br><span class="line">        getMenuInflater().inflate(R.menu.menu_item,menu);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-避坑指南"><a href="#4-避坑指南" class="headerlink" title="4.避坑指南"></a>4.避坑指南</h2><p>上面的例子看似简单，但一不小心可能就要踩坑，所以使用过程中还需要注意以下几点</p>
-<h3 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h3><p>布局文件和Activity所引的包要一致，Google提供的Toolbar的包不止一个，这种错误虽然低级，但相信还是会有粗心的同学会犯的</p>
-<h3 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h3><p>   在menu_item资源文件中要使用showAsAction属性，一般为app前缀，若无效再加一个android前缀的showAsAction属性，要在根目录menu中加tools:context属性指定上下文，此外还需加xmlns:tools属性</p>
-<h3 id="4-3"><a href="#4-3" class="headerlink" title="4.3"></a>4.3</h3><p>   使用setDisplayHomeAsUpEnabled需在 setSupportActionBar()之后</p>
-<h3 id="4-4"><a href="#4-4" class="headerlink" title="4.4"></a>4.4</h3><p>使用style样式文件设置弹出菜单的位置和样式及toolbar和弹出菜单的背景和文字颜色等属性，要注意哪些没有android前缀，不要直接选中系统提示的同名属性，否则没效果</p>
-
-          
+          简介Toolbar是Google在Android5.0推出的一个替代ActionBar的控件，具有良好的可扩展性，下面为大家示范一个关于ToolBar使用的示例先来看看效果图：      
+1.布局文件1234567891011121314151617181920&lt;?xml version=&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/16/ToolBar的使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -590,11 +580,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jycon">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/android.jpg">
+      <meta itemprop="image" content="/images/person.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jycon">
+      <meta itemprop="name" content="jycon-个人博客">
     </span>
 
     
@@ -656,10 +646,15 @@
       
         
           
-            <p> 经过一番折腾后，博客网站终于搭建起来了，虽然过程中遇到了几个坑，但凡事没有一点阻碍也就没有很大意思了，这篇博客是我的第一篇博客，希望自己以后能够一直坚持更新博客，工欲善其事，必先利其器，现在  工具已经准备就绪，下一步要做的就是借助这个工具来提升自我了，上一次写作好像已经是高中写作文的事了，记得以前高中的语文老师曾说过，要好好珍惜自己这段时间的写作时光，因为以后对很多人来说，可能就不会写作了，我很幸运，还能重操旧业，不过这水准连我自己都有点嫌弃了。  </p>
-<p>好了，话不多说，这篇文章主要是给自己的一个勉励，这次就先写到这了。                          </p>
-
-          
+           经过一番折腾后，博客网站终于搭建起来了，虽然过程中遇到了几个坑，但凡事没有一点阻碍也就没有很大意思了，这篇博客是我的第一篇博客，希望自己以后能够一直坚持更新博客，工欲善其事，必先利其器，现在  工具已经准备就绪，下一步要做的就是借助这个工具来提升自我了，上一次写作好像已经是高中写作文的事了，记得以
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/07/第一篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -736,7 +731,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/android.jpg"
+                src="/images/person.jpg"
                 alt="jycon" />
             
               <p class="site-author-name" itemprop="name">jycon</p>
@@ -760,10 +755,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -815,13 +810,13 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  
+   <span class="author" itemprop="copyrightHolder">jycon</span>
 
   
 </div>
 
 
-  <div class="powered-by">jycon</div>
+  <div class="powered-by">programming</div>
 
 
 
