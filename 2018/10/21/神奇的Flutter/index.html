@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,10 +87,16 @@
 <meta property="og:site_name" content="jycon-个人博客">
 <meta property="og:description" content="前言要定一个计划很容易，实施起来却很难，这一篇博客距上一篇隔了几个月的时间，不给自己找其他借口，我真是懒。闲话不说了，来说说本文的主角，Flutter。Flutter是一种更灵活，便利的UI框架，目前来说，我对它只有以下两个方面的一点了解：   1.跨平台，即一套代码可以在Android、ios两大平台上共用2.热重载，举个例子，比如我们平常开发Android应用时，只要代码稍有改变，必须得重新运">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-21T15:17:18.434Z">
+<meta property="og:image" content="https://jycon.top/img/flutter.PNG">
+<meta property="og:image" content="https://jycon.top/img/flutter1.PNG">
+<meta property="og:image" content="https://jycon.top/img/flutter2.PNG">
+<meta property="og:image" content="https://jycon.top/img/flutter3.PNG">
+<meta property="og:image" content="https://jycon.top/img/record1.gif">
+<meta property="og:updated_time" content="2018-10-21T15:49:36.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神奇的Flutter">
 <meta name="twitter:description" content="前言要定一个计划很容易，实施起来却很难，这一篇博客距上一篇隔了几个月的时间，不给自己找其他借口，我真是懒。闲话不说了，来说说本文的主角，Flutter。Flutter是一种更灵活，便利的UI框架，目前来说，我对它只有以下两个方面的一点了解：   1.跨平台，即一套代码可以在Android、ios两大平台上共用2.热重载，举个例子，比如我们平常开发Android应用时，只要代码稍有改变，必须得重新运">
+<meta name="twitter:image" content="https://jycon.top/img/flutter.PNG">
 
 
 
@@ -98,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -360,84 +366,36 @@
 <h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><h3 id="SDK的下载"><a href="#SDK的下载" class="headerlink" title="SDK的下载"></a>SDK的下载</h3><p>  SDK下载的方式有两种，一种是用git来将github仓库中的FlutterSDK下载到本地，一种是在官网直接将SDK文件下载下来，这里主要说一下第一种。</p>
 <p>   使用这种方式的前提是必须安装好Git,这个的安装教程大家可以自行百度，没有什么难的，安装好Git后，可以在右击GitBash Here打开窗口或者直接打开CMD,如果你将Git已经加到了环境变量中。然后输入</p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b beta https://github.com/flutter/flutter.git</span><br></pre></td></tr></table></figure>
-
- 这个是Flutter的beta分支，使用这个地址下载，网速不好或者其他因素可能无法下载成功，踩坑之后在一位仁兄的文章里看到下面的国内镜像地址
-
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitee.com/mirrors/Flutter.git</span><br></pre></td></tr></table></figure>
+</code></pre><p>   这个是Flutter的beta分支，使用这个地址下载，网速不好或者其他因素可能无法下载成功，踩坑之后在一位仁兄的文章里看到下面的国内镜像地址</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitee.com/mirrors/Flutter.git</span><br></pre></td></tr></table></figure>
 </code></pre><p>下载下来后要做的就是找到这个SDK文件，并将它的bin目录加到环境变量中去，虽然在其他文章中看到<br>可以用命令行设置，我这样做貌似没有效果，所以只能用稳妥一点的传统方法了，那么就得找到这个文件，一般这个路径跟你使用的工具的路径有关，如果你使用的Git下载的，就在Git的安装目录下找，如果是windows的CMD，比如我使用的CMD，我CMD处的显示的路径是C:\WINDOWS\system32，而实际SDK所在目录却是C:\WINDOWS\SysWOW64，这个还小小地阻碍了我一下，还好直接在资源管理器中搜到了。</p>
 <p>   对于第二种下载方式，我就不多说了，如果你对英语网页有点抵抗，或者你的网速不太好的话，我建议还是不要尝试了，官网的下载地址为</p>
 <p>   <a href="https://flutter.io/setup-windows/#get-the-flutter-sdk" target="_blank" rel="noopener">https://flutter.io/setup-windows/#get-the-flutter-sdk</a>  </p>
-<pre><code>进入后点击Get the Flutter SDK下方第一条的那个flutter_windows_vxxx-beta.zip文件下载即可   
-同样的也需要设置环境变量
+<p>   进入后点击Get the Flutter SDK下方第一条的那个flutter_windows_vxxx-beta.zip文件下载即可<br>   同样的也需要设置环境变量</p>
+<h3 id="用flutter-doctor来检测flutter所需要的依赖"><a href="#用flutter-doctor来检测flutter所需要的依赖" class="headerlink" title="用flutter  doctor来检测flutter所需要的依赖"></a>用flutter  doctor来检测flutter所需要的依赖</h3><p>   进入SDK文件，在最外层目录下找到flutter_console.bat文件并双击进入flutter命令行，输入flutter  doctor,在这个过程中如果长期卡住,则应添加以下两个环境变量  </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set  PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
+<p>   如果这种方式无效果，我建议使用老方法，并在系统变量下添加这两个变量，注意是系统变量，我之前按照其他文章的说法添加用户变量，但好像不行，设好后重启电脑，再次重复进入flutter命令行输入指令，下面是进入后的界面</p>
+<p>   <img src="/img/flutter.PNG" alt="Toolbar"> </p>
+<p>如果输入命令后没报错这可以进入下一个阶段了</p>
+<h2 id="2-IDE的配置"><a href="#2-IDE的配置" class="headerlink" title="2.IDE的配置"></a>2.IDE的配置</h2><p> flutter支持的编辑器有Android  Studio、IntelliJ IDEA、<br>  Visual Studio Code，我用的是AS，下面的操作就以AS为例，注意AS的版本需要在3.0或以上版本</p>
+<p>在导航栏依次点击File-&gt;Settings-&gt;Plugins</p>
+<p> 然后在搜索栏搜索Flutter下载安装，同时会弹出弹窗询问你是否安装Dart,同意后连带安装Dart,如果直接这样下载Dart失败，可以将报错的网址复制到浏览器下载到本地，再在这个页面选择下图中标识的那个按钮进行Dart安装</p>
+<p> <img src="/img/flutter1.PNG" alt="Toolbar4"> </p>
+<p> 下载安装完成后重启AS即可</p>
+<p> 进入AS后选择File-&gt;New -&gt;New  Flutter  Project就可以新建Flutter项目了</p>
+<p><img src="/img/flutter2.PNG" alt="Toolbar3"> </p>
+<p> 新建项目时还需要做到一件事就是配置Flutter SDK的路径，然后就可以开发Flutter项目了，新建后运行，可能第一次还会缺少一些文件，这个可以根据Console的提示进行下载即可，我这里项目的目录是这样的</p>
+<p><img src="/img/flutter3.PNG" alt="Toolbar2"> </p>
+<p> 可以看到上面有android、ios两个目录，这也验证了我之前说的跨平台</p>
+<h2 id="3-热重载"><a href="#3-热重载" class="headerlink" title="3.热重载"></a>3.热重载</h2><p>对于这个，我用下面一张图来说明一切</p>
+<p> <img src="/img/record1.gif" alt="Toolbar1"> </p>
+<p> 上面说到，热重载目前有一些条件限制，这个由于本人英语也不是很好，不敢妄自解读，英语好的朋友可以自行演讲</p>
+<p> <a href="https://flutter.io/hot-reload/#limitations" target="_blank" rel="noopener"> https://flutter.io/hot-reload/#limitations</a> </p>
+<p> 本文参考文章</p>
+<p>1  <a href="https://blog.csdn.net/sl317515877/article/details/79455592" target="_blank" rel="noopener"> https://blog.csdn.net/sl317515877/article/details/79455592</a> </p>
+<p>2 <a href="https://blog.csdn.net/yyanjun/article/details/80682586" target="_blank" rel="noopener">https://blog.csdn.net/yyanjun/article/details/80682586</a> </p>
+<p>3  <a href="https://mp.weixin.qq.com/s?__biz=MzIwMTAzMTMxMg==&amp;mid=2649492521&amp;idx=1&amp;sn=723658efc8221f15f6a6a93e1a3f08c8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzIwMTAzMTMxMg==&amp;mid=2649492521&amp;idx=1&amp;sn=723658efc8221f15f6a6a93e1a3f08c8&amp;scene=21#wechat_redirect</a> </p>
 
-### 用flutter  doctor来检测flutter所需要的依赖
-
-进入SDK文件，在最外层目录下找到flutter_console.bat文件并双击进入flutter命令行，输入flutter  doctor,在这个过程中如果长期卡住,则应添加以下两个环境变量  
-</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set  PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
-<pre><code> 如果这种方式无效果，我建议使用老方法，并在系统变量下添加这两个变量，注意是系统变量，我之前按照其他文章的说法添加用户变量，但好像不行，设好后重启电脑，再次重复进入flutter命令行输入指令，下面是进入后的界面
-
-  ![Toolbar](/img/flutter.PNG) 
-
-如果输入命令后没报错这可以进入下一个阶段了
-</code></pre><h2 id="2-IDE的配置"><a href="#2-IDE的配置" class="headerlink" title="2.IDE的配置"></a>2.IDE的配置</h2><pre><code>flutter支持的编辑器有Android  Studio、IntelliJ IDEA、
-Visual Studio Code，我用的是AS，下面的操作就以AS为例，注意AS的版本需要在3.0或以上版本
-
-
-   在导航栏依次点击File-&gt;Settings-&gt;Plugins
-
-     然后在搜索栏搜索Flutter下载安装，同时会弹出弹窗询问你是否安装Dart,同意后连带安装Dart,如果直接这样下载Dart失败，可以将报错的网址复制到浏览器下载到本地，再在这个页面选择下图中标识的那个按钮进行Dart安装
-
-
-        ![Toolbar](/img/flutter1.PNG) 
-
-
-
-    下载安装完成后重启AS即可
-
-
- 进入AS后选择File-&gt;New -&gt;New  Flutter  Project就可以新建Flutter项目了
-
-
-
-
-     ![Toolbar](/img/flutter2.PNG) 
-
-
-
-
-
-    新建项目时还需要做到一件事就是配置Flutter SDK的路径，然后就可以开发Flutter项目了，新建后运行，可能第一次还会缺少一些文件，这个可以根据Console的提示进行下载即可，我这里项目的目录是这样的
-
-
-   ![Toolbar](/img/flutter2.PNG) 
-
-
-    可以看到上面有android、ios两个目录，这也验证了我之前说的跨平台
-</code></pre><h2 id="3-热重载"><a href="#3-热重载" class="headerlink" title="3.热重载"></a>3.热重载</h2><pre><code>   对于这个，我用下面一张图来说明一切
-
-
-      ![Toolbar](/img/record1.gif) 
-
-
-
-
-  上面说到，热重载目前有一些条件限制，这个由于本人英语也不是很好，不敢妄自解读，英语好的朋友可以自行演讲
-
-
-[ https://flutter.io/hot-reload/#limitations]( https://flutter.io/hot-reload/#limitations) 
-
-本文参考文章
-
-
-    [ https://blog.csdn.net/sl317515877/article/details/79455592]( https://blog.csdn.net/sl317515877/article/details/79455592) 
-
-
-     [https://blog.csdn.net/yyanjun/article/details/80682586]( https://blog.csdn.net/yyanjun/article/details/80682586) 
-
-
-     [https://mp.weixin.qq.com/s?__biz=MzIwMTAzMTMxMg==&amp;mid=2649492521&amp;idx=1&amp;sn=723658efc8221f15f6a6a93e1a3f08c8&amp;scene=21#wechat_redirect]( https://mp.weixin.qq.com/s?__biz=MzIwMTAzMTMxMg==&amp;mid=2649492521&amp;idx=1&amp;sn=723658efc8221f15f6a6a93e1a3f08c8&amp;scene=21#wechat_redirect) 
-</code></pre>
       
     </div>
     
@@ -635,7 +593,7 @@ Visual Studio Code，我用的是AS，下面的操作就以AS为例，注意AS�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-跨平台，即一套代码可以在Android、ios两大平台上共用"><span class="nav-number">1.1.</span> <span class="nav-text">1.跨平台，即一套代码可以在Android、ios两大平台上共用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-热重载，举个例子，比如我们平常开发Android应用时，只要代码稍有改变，必须得重新运行，甚至还要clean-这个过程有点小漫长，而如果采用Flutter来做，我们代码的改变在设备上能立刻看到效果，这操作，爽歪歪，虽然目前而言这个热加载有一些情况限制"><span class="nav-number">1.2.</span> <span class="nav-text">2.热重载，举个例子，比如我们平常开发Android应用时，只要代码稍有改变，必须得重新运行，甚至还要clean,这个过程有点小漫长，而如果采用Flutter来做，我们代码的改变在设备上能立刻看到效果，这操作，爽歪歪，虽然目前而言这个热加载有一些情况限制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-number"></span> <span class="nav-text">1.安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SDK的下载"><span class="nav-number">1.</span> <span class="nav-text">SDK的下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-IDE的配置"><span class="nav-number"></span> <span class="nav-text">2.IDE的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-热重载"><span class="nav-number"></span> <span class="nav-text">3.热重载</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-跨平台，即一套代码可以在Android、ios两大平台上共用"><span class="nav-number">1.1.</span> <span class="nav-text">1.跨平台，即一套代码可以在Android、ios两大平台上共用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-热重载，举个例子，比如我们平常开发Android应用时，只要代码稍有改变，必须得重新运行，甚至还要clean-这个过程有点小漫长，而如果采用Flutter来做，我们代码的改变在设备上能立刻看到效果，这操作，爽歪歪，虽然目前而言这个热加载有一些情况限制"><span class="nav-number">1.2.</span> <span class="nav-text">2.热重载，举个例子，比如我们平常开发Android应用时，只要代码稍有改变，必须得重新运行，甚至还要clean,这个过程有点小漫长，而如果采用Flutter来做，我们代码的改变在设备上能立刻看到效果，这操作，爽歪歪，虽然目前而言这个热加载有一些情况限制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-number"></span> <span class="nav-text">1.安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SDK的下载"><span class="nav-number">1.</span> <span class="nav-text">SDK的下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用flutter-doctor来检测flutter所需要的依赖"><span class="nav-number">2.</span> <span class="nav-text">用flutter  doctor来检测flutter所需要的依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-IDE的配置"><span class="nav-number"></span> <span class="nav-text">2.IDE的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-热重载"><span class="nav-number"></span> <span class="nav-text">3.热重载</span></a></div>
             
 
           </div>
@@ -784,13 +742,6 @@ Visual Studio Code，我用的是AS，下面的操作就以AS为例，注意AS�
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
